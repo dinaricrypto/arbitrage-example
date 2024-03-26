@@ -1,0 +1,43 @@
+[tool.poetry]
+name = "arbitrage-example"
+version = "0.0.1"
+description = "Python example for arbitraging between Dinari and Uniswap-based DeFi pools"
+authors = ["Young Kim <young@dinari.com>"]
+readme = "README.md"
+package-mode = false
+
+[tool.poetry.dependencies]
+python = "^3.11"
+click = "==8.*"
+python-dotenv = "^1.0.1"
+pytz = "*"
+requests = "*"
+web3 = "==6.*"
+polygon-api-client = "^1.13.4"
+
+[tool.poetry.group.dev.dependencies]
+mypy = "^1.8.0"
+poetry-types = "^0.5.0"
+ruff = "^0.2.0"
+
+[tool.poetry.group.types.dependencies]
+types-pytz = "^2023.3.1.1"
+types-requests = "==2.31.0.6"
+
+[tool.ruff]
+src = ["arbitrage"]
+line-length = 120
+target-version = "py311"
+
+[tool.ruff.lint]
+ignore = ["E402", "E741", "E711", "E712"]
+extend-select = ["F", "I"]
+
+[tool.ruff.lint.isort]
+combine-as-imports = true
+force-sort-within-sections = true
+relative-imports-order = "closest-to-furthest"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
