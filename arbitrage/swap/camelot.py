@@ -7,8 +7,8 @@ from threading import Event
 from time import sleep
 from typing import Optional, cast
 
+from eth_account._utils.signing import to_bytes32
 from eth_account.signers.local import LocalAccount
-from hexbytes import HexBytes
 
 from web3 import Web3
 from web3.constants import ADDRESS_ZERO
@@ -252,8 +252,8 @@ def swap_camelot_buy(
                                 camelot_permit_msg["message"]["value"],
                                 camelot_permit_msg["message"]["deadline"],
                                 camelot_signed_permit_msg.v,
-                                HexBytes(Web3.to_hex(camelot_signed_permit_msg.r)),
-                                HexBytes(Web3.to_hex(camelot_signed_permit_msg.s)),
+                                to_bytes32(camelot_signed_permit_msg.r),
+                                to_bytes32(camelot_signed_permit_msg.s),
                             ],
                         ),
                         router_contract.encodeABI(
@@ -357,8 +357,8 @@ def swap_camelot_buy(
                                 dinari_permit_msg["message"]["value"],
                                 dinari_permit_msg["message"]["deadline"],
                                 dinari_signed_permit_msg.v,
-                                HexBytes(Web3.to_hex(dinari_signed_permit_msg.r)),
-                                HexBytes(Web3.to_hex(dinari_signed_permit_msg.s)),
+                                to_bytes32(dinari_signed_permit_msg.r),
+                                to_bytes32(dinari_signed_permit_msg.s),
                             ],
                         ),
                         order_processor_contract.encodeABI(
@@ -529,8 +529,8 @@ def swap_camelot_sell(
                                 dinari_permit_msg["message"]["value"],
                                 dinari_permit_msg["message"]["deadline"],
                                 dinari_signed_permit_msg.v,
-                                HexBytes(Web3.to_hex(dinari_signed_permit_msg.r)),
-                                HexBytes(Web3.to_hex(dinari_signed_permit_msg.s)),
+                                to_bytes32(dinari_signed_permit_msg.r),
+                                to_bytes32(dinari_signed_permit_msg.s),
                             ],
                         ),
                         order_processor_contract.encodeABI(
@@ -637,8 +637,8 @@ def swap_camelot_sell(
                                 camelot_permit_msg["message"]["value"],
                                 camelot_permit_msg["message"]["deadline"],
                                 camelot_signed_permit_msg.v,
-                                HexBytes(Web3.to_hex(camelot_signed_permit_msg.r)),
-                                HexBytes(Web3.to_hex(camelot_signed_permit_msg.s)),
+                                to_bytes32(camelot_signed_permit_msg.r),
+                                to_bytes32(camelot_signed_permit_msg.s),
                             ],
                         ),
                         router_contract.encodeABI(
