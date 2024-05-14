@@ -216,5 +216,11 @@ DSHARE_ADDRESSES: dict[Chain, list[DShareAddress]] = {
             wrapped_address="0x2F71B3804a74A013d00065225752dBA9aD061e51",
             camelot_pool_address="0x4fdf0e294d451b781168671774613d054ec2FCbe",
         ),
+        DShareAddress(
+            ticker_symbol="GME",
+            token_address="0xb415998A7bb6F11dC589e0eb20adf586BA32f12a",
+            wrapped_address="0x43333771E8d5FD74E5491d10aeAc2BFdC23D19C8",
+            camelot_pool_address="0xe63b2a7286568f240cc5a626c302249b07fd3a04",
+        ),
     ]
 }
